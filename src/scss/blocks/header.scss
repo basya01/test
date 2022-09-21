@@ -1,0 +1,90 @@
+@import '../config/variables.scss';
+
+.header {
+  display: flex;
+  padding: 28px 0;
+
+  &__container {
+    width: $container-header;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button {
+    padding: 10px 35px;
+    color: $white;
+    background: $violet;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+}
+
+.menu {
+  position: relative;
+  cursor: pointer;
+  width: 23px;
+  height: 14px;
+
+  &:hover {
+    .menu__lines,
+    .menu__lines::after,
+    .menu__lines::before {
+      background: $violet-hover !important;
+    }
+  }
+
+  &__lines {
+    width: 23px;
+    height: 2px;
+    background: $dark-violet;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: 0.1s;
+
+    &::before,
+    &::after {
+      content: '';
+      background: $dark-violet;
+      width: 15px;
+      height: 2px;
+      position: absolute;
+    }
+    &::before {
+      top: -4px;
+    }
+    &::after {
+      bottom: -4px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .header {
+    &__container {
+      width: 937px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .header {
+    &__container {
+      width: 600px;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    &__container {
+      width: 288px;
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+}

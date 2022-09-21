@@ -1,0 +1,49 @@
+@import './config/variables.scss';
+@import './config/reset.scss';
+
+body {
+  font-size: 15px;
+  font-family: $font-family;
+  font-weight: 500;
+  background: no-repeat $background-color;
+  color: $font-main-color;
+  padding-bottom: 15px;
+}
+
+.container {
+  width: $container;
+  margin: 0 auto;
+}
+
+button {
+  border: none;
+  font-family: $font-family;
+  font-size: 12px;
+  line-height: 18px;
+  color: $white;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: $violet-hover;
+  }
+}
+
+@media (max-width: 960px) {
+  body {
+    .container {
+      width: 600px;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  body {
+    .container {
+      width: 288px;
+      padding: 0 20px;
+    }
+  }
+}
+
+@import './blocks/header.scss';
+@import './blocks/section.scss';
